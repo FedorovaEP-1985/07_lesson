@@ -32,10 +32,9 @@ class ShopPage:
         for item in items:
             WebDriverWait(self.driver, 10).until(
                 EC.element_to_be_clickable(
-                    (
-                        By.XPATH,
+                    (By.XPATH,
                         f"//div[text()='{item}']/ancestor::div[@class='inventory_item']//button",
-                    )
+                     )
                 )
             ).click()
 
@@ -75,6 +74,3 @@ class ShopPage:
         assert total == "Total: $58.29", (
             f"Итоговая сумма не равна $58.29. " f"Фактическая сумма: {total}"
         )
-
-    def close(self):
-        self.driver.quit()

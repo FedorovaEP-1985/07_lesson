@@ -19,4 +19,4 @@ def test_shop_page():
             first_name="Иван", last_name="Петров",
             postal_code="123456")
     shop_page.checking_total_amount()
-    shop_page.close()
+    driver.quit()
